@@ -2,12 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f4ec96f-f5a9-45a5-91e2-587a062d13f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bouton_information.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bouton_input.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accueil.py" beforeDir="false" afterPath="$PROJECT_DIR$/accueil.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_colloscope.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_colloscope.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_semaine.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_semaine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui_info.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

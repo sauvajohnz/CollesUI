@@ -33,6 +33,7 @@ tentative_connexion = 0
 phase_authentification = True
 guest = False
 ui_gauche.info_site = page_colloscope.update_correspondance_colleurmatiere()
+ui_gauche.getmaj()
 
 
 def clique(pos):
@@ -52,7 +53,7 @@ def clique(pos):
 #page_colloscope.update_colloscope()
 
 # Skip authentification: (Developer mode only)
-skip = False
+skip = True
 if skip is True:
     phase_authentification = False
     accueil.etat = False
@@ -60,7 +61,7 @@ if skip is True:
     page_colloscope.update_colloscope()
     page_colloscope.set_etat(True)
     page_colloscope.demande_affichage()
-    ui_gauche.info_utilisateur = "Sauvajohn"
+    ui_gauche.info_utilisateur = "Admin"
 ######
 
 def authentification():
@@ -101,6 +102,8 @@ while running is True:
                 if event.key == 13: #Entrer
                     tentative_connexion += 1
                     authentification()
+        page_colloscope.bouton_modifier.handle_event(event)
+        page_colloscope.bouton_visualiser.handle_event(event)
         if phase_authentification is True:
             for box in input_boxes:
                 box.handle_event(event)

@@ -2,8 +2,7 @@ import pygame
 from infos import *
 import json
 import requests as rq
-
-
+from bouton_pressoir import *
 
 class Page_colloscope(pygame.sprite.Sprite):
     def __init__(self, screen, hauteur, largeur):
@@ -19,10 +18,14 @@ class Page_colloscope(pygame.sprite.Sprite):
         self.largeur_case = 30
         self.couleur_fond = (205,255,255)
         self.demande_affichage()
+        self.bouton_modifier = Bouton(370,555, 170,30, "Modifier")
+        self.bouton_visualiser = Bouton(670,555, 170,30, "Visualiser en PDF")
 
     def demande_affichage(self):
         if self.etat is True:
             self.dessiner()
+            self.bouton_modifier.draw(self.screen)
+            self.bouton_visualiser.draw(self.screen)
 
     def set_etat(self, etat):
         self.etat = etat
@@ -44,7 +47,7 @@ class Page_colloscope(pygame.sprite.Sprite):
 
     def update_colloscope(self):
         for j in range(0,16):
-            y = self.get_db_info_groupecolle( horaires[j][0][1][0], horaires[j][0][2][0].split(" ")[1])
+            y = self.get_db_info_groupecolle( horaires[j][0][1][1], horaires[j][0][2][1].split(" ")[1])
             for dico in y:
                 horaires[j][int(dico['semaine']) - 1] = dico['groupe']
 

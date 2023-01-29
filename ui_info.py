@@ -1,5 +1,6 @@
 import pygame
 from datetime import date
+import requests as rq
 
 class Ui_info(pygame.sprite.Sprite):
     def __init__(self, screen, hauteur, largeur):
@@ -23,9 +24,23 @@ class Ui_info(pygame.sprite.Sprite):
         today = date.today()
         self.info_date = today.strftime("%B %d, %Y")
         self.info_version = "0.1"
+        self.info_version_disponible = ""
 
 
         self.demande_affichage()
+
+    def getmaj(self):
+        try:
+            r = rq.post("https://www.collespsi.fr/get_collesui_ver.php", "")
+            self.info_version_disponible = r.text
+        except:
+            self.info_version_disponible = "Erreur"
+
+    def compare_maj(self):
+        if self.info_version_disponible == "Erreur":
+            return "Erreur"
+        return "" if self.info_version == self.info_version_disponible else "MAJ Disponible"
+
 
     def demande_affichage(self):
         if self.etat is True:
@@ -77,7 +92,8 @@ class Ui_info(pygame.sprite.Sprite):
             ((self.info_date, couleur_texte_variable), (60, 45)),
             (self.connection_site(), (120, 140)),
             (self.connection_db(), (140, 140)),
-            ((self.info_version, couleur_texte_variable), (self.hauteur * self.pourcentage_info - 15, 60))
+            ((self.info_version, couleur_texte_variable), (self.hauteur * self.pourcentage_info - 15, 60)),
+            ((self.compare_maj(), (255,255,0)),  (self.hauteur * self.pourcentage_info - 15, 84))
         ]
         for ligne in titres:
             self.screen.blit(self.font_titre.render(ligne[0], True, (0, 0, 0)),

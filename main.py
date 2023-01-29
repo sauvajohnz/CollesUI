@@ -8,10 +8,11 @@ from bouton_input import *
 from page_semaine import *
 from bouton_information import *
 
-size = largeur_fenetre, hauteur_fenetre = 1000, 600
-version = "0.2"
-
 pygame.init()
+
+size = largeur_fenetre, hauteur_fenetre = 1100, 600
+version = "0.2"
+pygame.display.set_caption('CollesUI')
 screen = pygame.display.set_mode(size)
 pygame.display.flip()
 
@@ -24,8 +25,8 @@ page_semaine = Page_semaine(screen, hauteur_fenetre, largeur_fenetre)
 
 
 # Boites à input pour l'authentification
-input_box_id = InputBox(390, 230, 200, 20)
-input_box_pw = InputBox(390, 260, 200, 20, secured=True)
+input_box_id = InputBox(450, 230, 200, 20)
+input_box_pw = InputBox(450, 260, 200, 20, secured=True)
 input_boxes = [input_box_id, input_box_pw]
 information_box = TextBox(290, 340, 400, 30)
 tentative_connexion = 0

@@ -62,11 +62,11 @@ class Page_colloscope(pygame.sprite.Sprite):
     def dessiner(self):
         #Fond
         pygame.draw.rect(self.screen, self.couleur_fond,
-                         pygame.Rect(self.largeur //5.5, 0, self.largeur*(1 - 1/5.5), self.hauteur))
+                         pygame.Rect(self.largeur //5.8, 0, self.largeur*(1 - 1/5.8), self.hauteur))
 
         for j in range(0, 17):
-            for i in range(0,17):
-                x = 230 + self.largeur // 5.5 + i * self.largeur_case
+            for i in range(0,20):
+                x = 230 + self.largeur // 5.8 + i * self.largeur_case
                 y = 30 + j * self.hauteur_case
                 if j == 0:
                     y = 20 # Espace de la premiere ligne
@@ -84,16 +84,16 @@ class Page_colloscope(pygame.sprite.Sprite):
                     self.screen.blit(self.font_nombre.render(str(i+1), True, (0,0,0)), (x+8, y+8))
 
             # Grandes cases sur les côtées avec les  colleurs,dates...
-            grande_case = pygame.Rect(205, y, self.largeur_case * 6 + 20, self.hauteur_case)
+            grande_case = pygame.Rect(217, y, self.largeur_case * 6 + 20, self.hauteur_case)
             self.screen.fill((255, 255, 255), grande_case)
             if j != 0:
                 for k in range(0,3):
                     self.screen.blit(self.font.render(horaires[j-1][0][k][0], True, (0,0,0)),
-                                     (207 + (self.largeur_case*2 - 2)* k, y + 3))
+                                     (219 + (self.largeur_case*2 - 2)* k, y + 3))
                     self.screen.blit(self.font.render(horaires[j - 1][0][k][1], True, (0, 0, 0)),
-                                     (207 + (self.largeur_case*2 - 2) * k, y + self.hauteur_case/2 + 1))
+                                     (219 + (self.largeur_case*2 - 2) * k, y + self.hauteur_case/2 + 1))
             else:
-                self.screen.blit(self.font_titre.render("Semaines", True, (0, 0, 0)),(255, y + 6))
+                self.screen.blit(self.font_titre.render("Semaines", True, (0, 0, 0)),(270, y + 6))
             pygame.draw.rect(self.screen, (0,0,0),grande_case, 1)
 
 

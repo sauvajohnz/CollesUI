@@ -21,4 +21,4 @@ class Page_semaine(pygame.sprite.Sprite):
     def dessiner(self):
         #Fond
         pygame.draw.rect(self.screen, self.couleur_fond,
-                         pygame.Rect(self.largeur //5.5, 0, self.largeur*(1 - 1/5.5), self.hauteur))
+                         pygame.Rect(self.largeur //5.8, 0, self.largeur*(1 - 1/5.8), self.hauteur))

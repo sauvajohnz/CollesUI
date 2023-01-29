@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7f4ec96f-f5a9-45a5-91e2-587a062d13f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bouton_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/bouton_input.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accueil.py" beforeDir="false" afterPath="$PROJECT_DIR$/accueil.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/page_colloscope.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_colloscope.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_semaine.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_semaine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui_info.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

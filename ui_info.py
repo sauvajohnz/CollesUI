@@ -10,7 +10,7 @@ class Ui_info(pygame.sprite.Sprite):
         self.pourcentage_info = 0.45  # Pourcentage de l'espace occupé par le compartiment information
         self.pourcentage_pages = 1 - self.pourcentage_info
         self.hauteur = hauteur
-        self.largeur = largeur // 5.5
+        self.largeur = largeur // 5.8
         self.screen = screen
         self.couleur_page1 = (205,255,255)
         self.couleur_page2 = (223, 242, 255)

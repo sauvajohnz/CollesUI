@@ -42,8 +42,10 @@ class Page_accueil(pygame.sprite.Sprite):
         pygame.draw.rect(self.screen, self.couleur_fond, pygame.Rect(0, 0, self.largeur, self.hauteur))
         texte_identifiant = police.render("Identifiants",1, (0,0,0))
         texte_guest = police.render(message_aide, 1, (128, 128, 128))
-        self.screen.blit(texte_identifiant, (435,200))
-        self.screen.blit(texte_guest, (250, self.hauteur - 20))
+        x_centre_identifiant = texte_identifiant.get_rect(center = self.screen.get_rect().center)[0]
+        x_centre_guest = texte_guest.get_rect(center=self.screen.get_rect().center)[0]
+        self.screen.blit(texte_identifiant, (x_centre_identifiant, 200))
+        self.screen.blit(texte_guest, (x_centre_guest, self.hauteur - 20))
 
 
 

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f4ec96f-f5a9-45a5-91e2-587a062d13f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bouton_information.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bouton_input.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infos.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accueil.py" beforeDir="false" afterPath="$PROJECT_DIR$/accueil.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />

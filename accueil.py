@@ -1,4 +1,7 @@
 import pygame
+import hashlib
+import json
+import requests as rq
 
 class Page_accueil(pygame.sprite.Sprite):
     def __init__(self, screen, hauteur, largeur):
@@ -15,17 +18,32 @@ class Page_accueil(pygame.sprite.Sprite):
         if self.etat is True:
             self.dessiner()
 
+    def verify_id(self, id, pw):
+        try:
+            demande = f'SELECT pw FROM `identifiants` WHERE id="{id}"'
+            r = rq.post("https://www.collespsi.fr/demande.php", demande)
+            if len(r.text) == 0:
+                return False
+            y = json.loads(r.text)
+            pw_b = bytes(pw, 'utf-8')
+            if hashlib.sha256(pw_b).hexdigest() == y[0]['pw']:
+                return True
+            return False
+        except:
+            return False
+
     def set_etat(self, etat):
         self.etat = etat
         self.demande_affichage()
 
     def dessiner(self):
         police = pygame.font.SysFont("monospace", 15)
-        #Fond
+        message_aide = "Si vous n'avez pas de compte, tapez 'guest' en identifiant"
         pygame.draw.rect(self.screen, self.couleur_fond, pygame.Rect(0, 0, self.largeur, self.hauteur))
-
         texte_identifiant = police.render("Identifiants",1, (0,0,0))
+        texte_guest = police.render(message_aide, 1, (128, 128, 128))
         self.screen.blit(texte_identifiant, (435,200))
+        self.screen.blit(texte_guest, (250, self.hauteur - 20))
 
 
 

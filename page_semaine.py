@@ -7,7 +7,7 @@ class Page_semaine(pygame.sprite.Sprite):
         self.hauteur = hauteur
         self.largeur = largeur
         self.screen = screen
-        self.couleur_fond = (25,200,202)
+        self.couleur_fond = (223, 242, 255)
         self.demande_affichage()
 
     def demande_affichage(self):

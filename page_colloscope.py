@@ -71,8 +71,10 @@ class Page_colloscope(pygame.sprite.Sprite):
                 if j == 0:
                     y = 20 # Espace de la premiere ligne
                 x += (i//5)*10 # Espace toutes les 5 semaines
-                pygame.draw.rect(self.screen, (0,0,0),
-                                pygame.Rect(x, y, self.largeur_case, self.hauteur_case), 1)
+
+                case = pygame.Rect(x, y, self.largeur_case, self.hauteur_case)
+                self.screen.fill((255,255,255), case)
+                pygame.draw.rect(self.screen, (0,0,0), case, 1)
                 if j != 0:
                     groupe_colle = horaires[j-1][i+1]
                     if groupe_colle == 0:
@@ -81,8 +83,9 @@ class Page_colloscope(pygame.sprite.Sprite):
                 else:
                     self.screen.blit(self.font_nombre.render(str(i+1), True, (0,0,0)), (x+8, y+8))
 
-
-            #Semaine (jour, heure)
+            # Grandes cases sur les côtées avec les  colleurs,dates...
+            grande_case = pygame.Rect(205, y, self.largeur_case * 6 + 20, self.hauteur_case)
+            self.screen.fill((255, 255, 255), grande_case)
             if j != 0:
                 for k in range(0,3):
                     self.screen.blit(self.font.render(horaires[j-1][0][k][0], True, (0,0,0)),
@@ -90,11 +93,7 @@ class Page_colloscope(pygame.sprite.Sprite):
                     self.screen.blit(self.font.render(horaires[j - 1][0][k][1], True, (0, 0, 0)),
                                      (207 + (self.largeur_case*2 - 2) * k, y + self.hauteur_case/2 + 1))
             else:
-                self.screen.blit(self.font_titre.render("Semaines", True, (0, 0, 0)),
-                                     (255, y + 6))
-
-
-            pygame.draw.rect(self.screen, (0,0,0),
-                            pygame.Rect(205, y, self.largeur_case*6 + 20, self.hauteur_case), 1)
+                self.screen.blit(self.font_titre.render("Semaines", True, (0, 0, 0)),(255, y + 6))
+            pygame.draw.rect(self.screen, (0,0,0),grande_case, 1)
 
 

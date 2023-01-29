@@ -76,7 +76,6 @@ def authentification():
         autorise = True
         guest = True
         ui_gauche.info_utilisateur = "guest"
-
     if autorise is True:
         accueil.set_etat(False)
         page_colloscope.set_etat(True)
@@ -84,23 +83,23 @@ def authentification():
         phase_authentification = False
         page_colloscope.update_colloscope()
         page_colloscope.demande_affichage()
+    else:
+        for box in input_boxes:
+            box.set_text('')
+            box.draw(screen)
 
 running = True
 while running is True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        if event.type == pygame.MOUSEBUTTONUP:
+        elif event.type == pygame.MOUSEBUTTONUP:
             clique(pygame.mouse.get_pos())
-        if event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN:
             if phase_authentification is True:
                 if event.key == 13: #Entrer
                     tentative_connexion += 1
                     authentification()
-                    for box in input_boxes:
-                        box.set_text('')
-                        box.draw(screen)
-                    page_colloscope.demande_affichage()
         if phase_authentification is True:
             for box in input_boxes:
                 box.handle_event(event)

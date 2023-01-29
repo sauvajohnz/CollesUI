@@ -4,11 +4,11 @@ class Bouton:
     def __init__(self, x, y, w, h, text=''):
         self.largeur = w
         self.x = x
-        self.couleur_inactif = (255,255,255)
-        self.couleur_actif = (128,128,128)
+        self.couleur_inactif = (128,128,128)
+        self.couleur_actif = (255,255,255)
         self.limite_carac = 17
         self.rect = pygame.Rect(x, y, w, h)
-        self.color = self.couleur_inactif
+        self.color = self.couleur_actif
         self.text = text
         self.font = pygame.font.Font(None, 24)
         self.txt_surface = self.font.render(text, True, (0,0,0))
@@ -26,6 +26,15 @@ class Bouton:
             # Change the current color of the input box.
             #self.color = self.couleur_actif if self.active else self.couleur_inactif
 
+    def off(self):
+        "Rend le bouton incliquable"
+        self.active = False
+        self.color = self.couleur_inactif
+
+    def on(self):
+        "Rend le bouton cliquable"
+        self.active = True
+        self.color = self.couleur_inactif
 
     def draw(self, screen):
         # Blit the text.

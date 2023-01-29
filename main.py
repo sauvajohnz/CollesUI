@@ -11,7 +11,7 @@ from bouton_information import *
 pygame.init()
 
 size = largeur_fenetre, hauteur_fenetre = 1100, 600
-version = "0.2"
+version = "0.21"
 pygame.display.set_caption('CollesUI')
 screen = pygame.display.set_mode(size)
 pygame.display.flip()
@@ -34,6 +34,7 @@ phase_authentification = True
 guest = False
 ui_gauche.info_site = page_colloscope.update_correspondance_colleurmatiere()
 ui_gauche.getmaj()
+page_colloscope.bouton_modifier.off()
 
 
 def clique(pos):
@@ -53,7 +54,7 @@ def clique(pos):
 #page_colloscope.update_colloscope()
 
 # Skip authentification: (Developer mode only)
-skip = True
+skip = False
 if skip is True:
     phase_authentification = False
     accueil.etat = False

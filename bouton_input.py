@@ -52,7 +52,7 @@ class InputBox:
         self.text = text
         self.update()
 
-    def draw(sealf, screen):
+    def draw(self, screen):
         # Blit the text.
         screen.fill((255, 255, 255), self.rect)
         screen.blit(self.txt_surface, (self.rect.x+2, self.rect.y+2))

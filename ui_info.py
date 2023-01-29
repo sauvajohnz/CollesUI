@@ -93,7 +93,7 @@ class Ui_info(pygame.sprite.Sprite):
             (self.connection_site(), (120, 140)),
             (self.connection_db(), (140, 140)),
             ((self.info_version, couleur_texte_variable), (self.hauteur * self.pourcentage_info - 15, 60)),
-            ((self.compare_maj(), (255,255,0)),  (self.hauteur * self.pourcentage_info - 15, 84))
+            ((self.compare_maj(), (255,255,0)),  (self.hauteur * self.pourcentage_info - 15, 85))
         ]
         for ligne in titres:
             self.screen.blit(self.font_titre.render(ligne[0], True, (0, 0, 0)),
